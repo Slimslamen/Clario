@@ -33,12 +33,7 @@ export default function Booking() {
     })
   }, { scope: sectionRef })
 
-  useEffect(() => {
-    (async function () {
-      const cal = await getCalApi({"namespace":"30min"});
-      cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
-    })();
-  }, [])
+
 
   return (
     <section id="booking" ref={sectionRef} className={`section ${styles.booking}`} aria-labelledby="booking-heading">
