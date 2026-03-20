@@ -1,0 +1,131 @@
+.page {
+  padding-top: 100px;
+  padding-bottom: var(--sp-7);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 780px;
+}
+
+.header {
+  margin-bottom: var(--sp-7);
+  padding-bottom: var(--sp-6);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+  margin-bottom: var(--sp-4);
+  transition: color var(--dur-fast);
+}
+
+.back:hover { color: var(--c-accent); }
+
+.updated {
+  font-size: var(--fs-xs);
+  color: var(--c-secondary);
+  margin-bottom: var(--sp-3);
+}
+
+.intro {
+  margin-top: var(--sp-4);
+  font-size: 1.05rem;
+  color: var(--c-text-muted);
+  line-height: 1.75;
+}
+
+/* Sections */
+.content > section {
+  margin-bottom: var(--sp-6);
+}
+
+.content h2 {
+  font-size: 1.3rem;
+  margin-bottom: var(--sp-3);
+  color: var(--c-text);
+}
+
+.content p {
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+  line-height: 1.8;
+  margin-bottom: var(--sp-3);
+}
+
+.content ul {
+  list-style: none;
+  margin-bottom: var(--sp-3);
+}
+
+.content ul li {
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+  line-height: 1.75;
+  padding-left: var(--sp-4);
+  position: relative;
+  margin-bottom: var(--sp-2);
+}
+
+.content ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--c-accent);
+  font-size: 12px;
+}
+
+.content a {
+  color: var(--c-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.content a:hover { opacity: 0.75; }
+
+.address {
+  font-style: normal;
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+  line-height: 1.9;
+  padding: var(--sp-4);
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--c-accent);
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+  margin-bottom: var(--sp-3);
+}
+
+.table th {
+  text-align: left;
+  padding: var(--sp-2) var(--sp-3);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-secondary);
+  background: var(--c-surface);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.table td {
+  padding: var(--sp-3);
+  color: var(--c-text-muted);
+  border-bottom: 1px solid var(--c-border);
+  vertical-align: top;
+  line-height: 1.65;
+}
+
+.table tr:last-child td { border-bottom: none; }
+.table tr:nth-child(even) td { background: rgba(255,255,255,0.015); }

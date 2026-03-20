@@ -1,0 +1,107 @@
+.services { position: relative; }
+
+.bgLine {
+  position: absolute;
+  top: 0; left: 50%;
+  width: 1px; height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--c-border) 20%, var(--c-border) 80%, transparent);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.header {
+  text-align: center;
+  max-width: 600px;
+  margin-inline: auto;
+  margin-bottom: var(--sp-7);
+}
+.sub { margin-top: var(--sp-3); color: var(--c-text-muted); line-height: 1.7; }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--c-border);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.card {
+  position: relative;
+  background: var(--c-surface);
+  padding: var(--sp-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  overflow: hidden;
+  transition: background var(--dur-fast);
+}
+.card:hover { background: var(--c-surface-2); }
+.card:hover .cardGlow { opacity: 1; }
+
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 100%, var(--c-accent-dim), transparent);
+  opacity: 0;
+  transition: opacity var(--dur-base);
+  pointer-events: none;
+}
+
+.topRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.serviceNum {
+  font-family: 'DM Serif Display', serif;
+  font-size: 3.5rem;
+  color: var(--c-border);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  user-select: none;
+  transition: color var(--dur-fast);
+}
+.card:hover .serviceNum { color: var(--c-accent-dim); }
+
+.iconWrap {
+  width: 52px; height: 52px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--radius-sm);
+  background: var(--c-accent-dim);
+  color: var(--c-accent);
+  border: 1px solid rgba(240,168,50,0.18);
+  flex-shrink: 0;
+}
+
+.title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.flow { display: flex; flex-direction: column; gap: var(--sp-3); flex: 1; }
+
+.flowItem { display: flex; flex-direction: column; gap: 4px; }
+
+.flowLabel {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--c-secondary);
+}
+.flowText { font-size: var(--fs-sm); color: var(--c-text-muted); line-height: 1.65; }
+
+.outcomeItem {
+  padding-top: var(--sp-3);
+  border-top: 1px solid var(--c-border);
+}
+.outcomeLabel { color: var(--c-accent); }
+.outcomeText  { color: var(--c-text); font-weight: 500; }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; max-width: 480px; margin-inline: auto; }
+  .bgLine { display: none; }
+}

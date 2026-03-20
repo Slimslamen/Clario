@@ -1,0 +1,186 @@
+/* ─── Section ─────────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-top: 120px;
+  padding-bottom: var(--sp-7);
+  overflow: hidden;
+  /* perspective for 3D tilt child */
+  perspective: 1200px;
+}
+
+/* ─── Canvas ──────────────────────────────────────────────────── */
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Glow orbs ───────────────────────────────────────────────── */
+.glowA {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  top: -180px;
+  left: -220px;
+  background: radial-gradient(circle, rgba(240, 168, 50, 0.1) 0%, transparent 65%);
+  filter: blur(60px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.glowB {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  bottom: -80px;
+  right: -80px;
+  background: radial-gradient(circle, rgba(99, 120, 255, 0.08) 0%, transparent 65%);
+  filter: blur(80px);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.glowC {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 40%;
+  left: 55%;
+  background: radial-gradient(circle, rgba(240, 168, 50, 0.05) 0%, transparent 70%);
+  filter: blur(50px);
+  pointer-events: none;
+}
+
+/* ─── Grid ────────────────────────────────────────────────────── */
+.grid {
+  position: absolute;
+  inset: -20%;           /* oversized so parallax doesn't expose edges */
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size: 55px 55px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 0%, black 40%, transparent 100%);
+  pointer-events: none;
+  will-change: transform;
+}
+
+/* ─── 3D tilt wrapper ─────────────────────────────────────────── */
+.tiltWrap {
+  position: relative;
+  z-index: 6;
+  z-index: 1;
+  width: 100%;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ─── Inner content ───────────────────────────────────────────── */
+.inner {
+  max-width: 720px;
+  transform: translateZ(40px);   /* lifts content slightly toward viewer */
+}
+
+/* ─── Headline clip rows ──────────────────────────────────────── */
+.headline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.05em;
+  margin-bottom: var(--sp-4);
+  font-size: clamp(2.6rem, 6.5vw, 4.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+
+.clipRow {
+  display: block;
+  overflow: hidden;   /* masks the clip-path reveal */
+  padding-bottom: 0.08em;
+}
+
+.clipInner {
+  display: block;
+  opacity: 0;         /* GSAP sets visible before animating */
+}
+
+.accentLine {
+  color: var(--c-accent);
+  font-style: italic;
+}
+
+/* ─── Sub ─────────────────────────────────────────────────────── */
+.sub {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--c-text-muted);
+  line-height: 1.7;
+  max-width: 560px;
+  margin-bottom: var(--sp-5);
+}
+
+/* ─── CTAs ────────────────────────────────────────────────────── */
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-6);
+}
+
+/* ─── Trust badges ────────────────────────────────────────────── */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-1);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  color: var(--c-text-muted);
+  padding: 6px 12px;
+  border: 1px solid var(--c-border);
+  border-radius: 100px;
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(8px);
+}
+
+/* ─── Scroll hint ─────────────────────────────────────────────── */
+.scrollHint {
+  position: absolute;
+  bottom: var(--sp-5);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.scrollLine {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, var(--c-accent), transparent);
+  animation: scrollDrop 1.618s ease-in-out infinite;
+}
+
+@keyframes scrollDrop {
+  0%, 100% { opacity: 0; transform: scaleY(0); transform-origin: top; }
+  50%       { opacity: 1; transform: scaleY(1); }
+}
+
+/* ─── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  .hero    { padding-top: 96px; }
+  .ctas    { flex-direction: column; align-items: flex-start; }
+  .glowA   { width: 400px; }
+  .glowB   { width: 300px; }
+  .inner   { transform: none; }  /* disable 3D lift on mobile */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clipInner { opacity: 1 !important; clip-path: none !important; }
+  .scrollLine { animation: none; opacity: 0.4; }
+}
