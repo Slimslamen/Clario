@@ -169,7 +169,7 @@ export default function ScrollGlobe() {
 
         // Update particle colors every 2 frames for perf
         if (frame % 2 === 0) {
-          const ca = geo.attributes.color as T.BufferAttribute
+          const ca = geo.attributes.color as import('three').BufferAttribute
           for (let i = 0; i < COUNT; i++) {
             const b = 0.65 + Math.sin(i * 1.7 + frame * 0.012) * 0.2
             ca.array[i*3]   = Math.min(1, currentColor.r * b)
@@ -179,8 +179,8 @@ export default function ScrollGlobe() {
           ca.needsUpdate = true
         }
 
-        ;(linesMesh.material as T.LineBasicMaterial).color.setRGB(currentColor.r, currentColor.g, currentColor.b)
-        ;(atmoMesh.material  as T.MeshBasicMaterial).color.setRGB(currentColor.r, currentColor.g, currentColor.b)
+        ;(linesMesh.material as import('three').LineBasicMaterial)
+        ;(atmoMesh.material as import('three').MeshBasicMaterial)
 
         // Rotation
         autoRotY += 0.0025
