@@ -11,9 +11,9 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 
 const metrics = [
   { value: 35,  suffix: '%', labelSv: 'ökad effektivitet',     labelEn: 'efficiency increase' },
-  { value: 80,  suffix: '%', labelSv: 'färre missade samtal',  labelEn: 'fewer missed calls'  },
-  { value: 48,  suffix: 'h', labelSv: 'till live-system',      labelEn: 'to go live'          },
-  { value: 24,  suffix: '/7',labelSv: 'AI alltid tillgänglig', labelEn: 'AI always available' },
+  { value: 70,  suffix: '%', labelSv: 'färre missade samtal',  labelEn: 'fewer missed calls'  },
+  { value: 72,  suffix: 'h', labelSv: 'till live-system',      labelEn: 'to go live'          },
+  { value: 24,  suffix: '/7',labelSv: 'AI är alltid tillgänglig', labelEn: 'AI is always available' },
 ]
 
 export default function Results() {
@@ -73,9 +73,6 @@ export default function Results() {
                 <span className={styles.suffix}>{m.suffix}</span>
               </div>
               <p className={styles.metricLabel}>{t(m.labelSv, m.labelEn)}</p>
-              <div className={styles.bar}>
-                <div className={styles.barFill} style={{ '--pct': `${m.value === 24 ? 100 : m.value}%` } as React.CSSProperties} />
-              </div>
             </div>
           ))}
         </div>

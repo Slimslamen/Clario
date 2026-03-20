@@ -18,8 +18,8 @@ const testimonials = [
     initials: 'AL', color: '#f0a832',
   },
   {
-    quoteSv: 'Implementationen tog bokstavligen 48 timmar. Nu körs bokning och uppföljning helt automatiskt. Otroligt smidig lösning.',
-    quoteEn: 'Implementation literally took 48 hours. Now bookings and follow-ups run completely automatically. Incredibly smooth solution.',
+    quoteSv: 'Implementationen tog bokstavligen 72 timmar. Nu körs bokning och uppföljning helt automatiskt. Otroligt smidig lösning.',
+    quoteEn: 'Implementation literally took 72 hours. Now bookings and follow-ups run completely automatically. Incredibly smooth solution.',
     nameSv: 'Marcus Berg', nameEn: 'Marcus Berg',
     roleSv: 'VD, Bergström Fastigheter', roleEn: 'CEO, Bergström Properties',
     initials: 'MB', color: '#6378ff',

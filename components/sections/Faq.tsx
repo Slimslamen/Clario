@@ -13,8 +13,8 @@ const faqs = [
   {
     qSv: 'Hur lång tid tar det att komma igång med Clario?',
     qEn: 'How long does it take to get started with Clario?',
-    aSv: 'Typisk implementationstid är 48 timmar från beställning till live-system. Vi hanterar all teknisk setup och konfiguration — du behöver inte göra något tekniskt.',
-    aEn: "Typical implementation time is 48 hours from order to live system. We handle all technical setup and configuration — you don't need to do anything technical.",
+    aSv: 'Typisk implementationstid är 72 timmar från beställning till live-system. Vi hanterar all teknisk setup och konfiguration. Du behöver inte göra något tekniskt.',
+    aEn: "Typical implementation time is 72 hours from order to live system. We handle all technical setup and configuration. You don't need to do anything technical.",
   },
   {
     qSv: 'Vilka bokningssystem integrerar Clario med?',
@@ -31,8 +31,8 @@ const faqs = [
   {
     qSv: 'Kan AI:n prata svenska med mina kunder?',
     qEn: 'Can the AI speak Swedish with my customers?',
-    aSv: 'Absolut — det är en kärnfunktion. Clario är optimerad för naturlig, professionell svenska och kan hantera dialekter och branschspecifikt språk.',
-    aEn: "Absolutely — that's a core feature. Clario is optimized for natural, professional Swedish and can handle dialects and industry-specific language.",
+    aSv: 'Absolut. Det är en kärnfunktion. Clario är optimerad för naturlig, professionell svenska och kan hantera dialekter och branschspecifikt språk.',
+    aEn: "Absolutely. That's a core feature. Clario is optimized for natural, professional Swedish and can handle dialects and industry-specific language.",
   },
   {
     qSv: 'Vad händer om AI:n inte kan svara på en fråga?',
@@ -43,8 +43,8 @@ const faqs = [
   {
     qSv: 'Finns det ett bindande kontrakt?',
     qEn: 'Is there a binding contract?',
-    aSv: 'Nej. Vi tror på att leverera värde — inte på att låsa in kunder. Du kan avsluta med 30 dagars uppsägningstid.',
-    aEn: "No. We believe in delivering value — not locking customers in. You can cancel with 30 days' notice.",
+    aSv: 'Nej. Vi tror på att leverera värde, inte på att låsa in kunder. Du kan avsluta med 30 dagars uppsägningstid.',
+    aEn: "No. We believe in delivering value, not locking customers in. You can cancel with 30 days' notice.",
   },
 ]
 

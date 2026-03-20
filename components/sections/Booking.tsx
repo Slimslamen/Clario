@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -8,9 +8,6 @@ import { useLang } from '@/lib/lang'
 import styles from './Booking.module.css'
 
 gsap.registerPlugin(useGSAP, ScrollTrigger)
-
-const CAL_USERNAME = process.env.NEXT_PUBLIC_CAL_USERNAME || 'your-username'
-const CAL_EVENT    = process.env.NEXT_PUBLIC_CAL_EVENT    || 'demo-30min'
 
 export default function Booking() {
   const { t } = useLang()
@@ -36,6 +33,13 @@ export default function Booking() {
     })
   }, { scope: sectionRef })
 
+  useEffect(() => {
+    (async function () {
+      const cal = await getCalApi({"namespace":"30min"});
+      cal("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+    })();
+  }, [])
+
   return (
     <section id="booking" ref={sectionRef} className={`section ${styles.booking}`} aria-labelledby="booking-heading">
       <div className={styles.bgGlow} aria-hidden="true" />
@@ -58,7 +62,7 @@ export default function Booking() {
           ))}
 
           <iframe
-            src={`https://cal.com/${CAL_USERNAME}/${CAL_EVENT}?embed=true&theme=dark`}
+            src={`https://cal.com/jimmy-lopez-morales-iawco1/30min?embed=true&theme=dark`}
             className={styles.calEmbed}
             title={t('Boka en demo med Clario', 'Book a demo with Clario')}
             loading="lazy"

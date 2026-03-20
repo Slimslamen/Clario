@@ -12,7 +12,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger)
 const steps = [
   {
     num: '01', titleSv: 'Analys',        titleEn: 'Analysis',
-    descSv: 'Vi kartlägger dina nuvarande flöden — samtal, bokning och kundkommunikation — och identifierar var AI skapar störst värde.',
+    descSv: 'Vi kartlägger dina nuvarande flöden - samtal, bokning och kundkommunikation — och identifierar var AI skapar störst värde.',
     descEn: 'We map your current flows — calls, bookings and customer communication — and identify where AI creates the greatest value.',
   },
   {
@@ -22,8 +22,8 @@ const steps = [
   },
   {
     num: '03', titleSv: 'Implementation',titleEn: 'Implementation',
-    descSv: 'Vi driftsätter och testar systemet live. Allt verifieras innan det går i produktion. Typisk ledtid: 48 timmar.',
-    descEn: 'We deploy and test the system live. Everything is verified before going to production. Typical lead time: 48 hours.',
+    descSv: 'Vi driftsätter och testar systemet live. Allt verifieras innan det går i produktion. Typisk ledtid: 72 timmar.',
+    descEn: 'We deploy and test the system live. Everything is verified before going to production. Typical lead time: 72 hours.',
   },
   {
     num: '04', titleSv: 'Optimering',    titleEn: 'Optimization',
@@ -67,7 +67,7 @@ export default function Process() {
           <h2 id="process-heading">{t('Från idé till live på 48h', 'From idea to live in 48h')}</h2>
         </div>
 
-        <ol className={styles.steps} role="list">
+        <ul className={styles.steps} role="list">
           {steps.map((s, i) => (
             <li key={i} className={styles.step} data-step data-step-idx={i}>
               <div className={styles.stepHead}>
@@ -78,7 +78,7 @@ export default function Process() {
               <p className={styles.stepDesc}>{t(s.descSv, s.descEn)}</p>
             </li>
           ))}
-        </ol>
+        </ul>
       </div>
     </section>
   )
