@@ -64,7 +64,7 @@ export default function Process() {
       <div className="container">
         <div className={styles.header}>
           <p className="label">{t('Vår process', 'Our process')}</p>
-          <h2 id="process-heading">{t('Från idé till live på 48h', 'From idea to live in 48h')}</h2>
+          <h2 id="process-heading">{t('Från idé till live på 72h', 'From idea to live in 72h')}</h2>
         </div>
 
         <ul className={styles.steps} role="list">

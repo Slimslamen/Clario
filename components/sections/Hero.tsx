@@ -219,7 +219,7 @@ export default function Hero() {
             <div className={styles.badges}>
               {[
                 { icon: '🔒', label: t('GDPR-säker', 'GDPR secure') },
-                { icon: '⚡', label: t('Upp och igång på 48h', 'Live in 48h') },
+                { icon: '⚡', label: t('Upp och igång på 72h', 'Live in 72h') },
                 { icon: '📞', label: t('24/7 tillgänglig', '24/7 available') },
               ].map(({ icon, label }) => (
                 <span key={String(label)} className={styles.badge} data-fade>
